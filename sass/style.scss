@@ -1,0 +1,79 @@
+body {
+  text-align: center;
+  padding: 10px;
+  font-family: 'Arial';
+}
+.container {
+  margin: 0 auto;
+  width: 700px;
+}
+h1, h2 {
+  text-transform: uppercase;
+  margin: 20px auto;
+  color: #ba1414;
+}
+.column {
+  width: 33.333%;
+  float: left;
+}
+button {
+  display: inline-block;
+  height: 60px;
+  min-width: 70%;
+  font-size: 24px;
+  font-weight: bold;
+  cursor: pointer;
+  border-radius: 4px;
+  color: #fff;
+  transition: color .3s, background-color .3s;
+  outline: 0!important;
+  margin: 30px;
+}
+.yellow {
+  background-color: #f2b809;
+	border: 2px solid #f2b809;
+}
+.yellow:hover, .yellow:active {
+		color: #f2b809;
+		background-color: #fff;
+}
+.orange {
+  background-color: #ff6e00;
+	border: 2px solid #ff6e00;
+}
+.orange:hover, .orange:active {
+		color: #ff6e00;
+		background-color: #fff;
+}
+.red {
+  background-color: #ba1414;
+	border: 2px solid #ba1414;
+}
+.red:hover, .red:active {
+		color: #ba1414;
+		background-color: #fff;
+}
+
+.green {
+  background-color: #5aba27;
+	border: 2px solid #5aba27;
+}
+.green:hover, .green:active {
+		color: #5aba27;
+		background-color: #fff;
+}
+#winning-output {
+  font-size: 18px;
+}
+.result-box {
+  width: 40%;
+  border: 2px solid #ba1414;
+  border-radius: 4px;
+  text-align: center;
+  margin:20px auto;
+}
+#result {
+  font-size: 32px;
+  color: #ba1414;
+  margin-bottom: 20px;
+}
