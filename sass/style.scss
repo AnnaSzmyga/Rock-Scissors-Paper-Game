@@ -29,50 +29,50 @@ button {
   outline: 0!important;
   margin: 30px;
 }
-.yellow {
+.rock-btn {
   background-color: #f2b809;
 	border: 2px solid #f2b809;
 }
-.yellow:hover, .yellow:active {
+.rock-btn:hover, .rock-btn:active {
 		color: #f2b809;
 		background-color: #fff;
 }
-.orange {
+.scissors-btn {
   background-color: #ff6e00;
 	border: 2px solid #ff6e00;
 }
-.orange:hover, .orange:active {
+.scissors-btn:hover, .scissors-btn:active {
 		color: #ff6e00;
 		background-color: #fff;
 }
-.red {
+.paper-btn {
   background-color: #ba1414;
 	border: 2px solid #ba1414;
 }
-.red:hover, .red:active {
+.paper-btn:hover, .paper-btn:active {
 		color: #ba1414;
 		background-color: #fff;
 }
 
-.green {
+.new-game-btn {
   background-color: #5aba27;
 	border: 2px solid #5aba27;
 }
-.green:hover, .green:active {
+.new-game-btn:hover, .new-game-btn:active {
 		color: #5aba27;
 		background-color: #fff;
 }
 #winning-output {
   font-size: 18px;
 }
-.result-box {
+.result-wrapper {
   width: 40%;
   border: 2px solid #ba1414;
   border-radius: 4px;
   text-align: center;
   margin:20px auto;
 }
-#result {
+#result-box {
   font-size: 32px;
   color: #ba1414;
   margin-bottom: 20px;

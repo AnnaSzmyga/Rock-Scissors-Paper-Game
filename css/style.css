@@ -1,0 +1,31 @@
+body { text-align: center; padding: 10px; font-family: 'Arial'; }
+
+.container { margin: 0 auto; width: 700px; }
+
+h1, h2 { text-transform: uppercase; margin: 20px auto; color: #ba1414; }
+
+.column { width: 33.333%; float: left; }
+
+button { display: inline-block; height: 60px; min-width: 70%; font-size: 24px; font-weight: bold; cursor: pointer; border-radius: 4px; color: #fff; transition: color .3s, background-color .3s; outline: 0 !important; margin: 30px; }
+
+.rock-btn { background-color: #f2b809; border: 2px solid #f2b809; }
+
+.rock-btn:hover, .rock-btn:active { color: #f2b809; background-color: #fff; }
+
+.scissors-btn { background-color: #ff6e00; border: 2px solid #ff6e00; }
+
+.scissors-btn:hover, .scissors-btn:active { color: #ff6e00; background-color: #fff; }
+
+.paper-btn { background-color: #ba1414; border: 2px solid #ba1414; }
+
+.paper-btn:hover, .paper-btn:active { color: #ba1414; background-color: #fff; }
+
+.new-game-btn { background-color: #5aba27; border: 2px solid #5aba27; }
+
+.new-game-btn:hover, .new-game-btn:active { color: #5aba27; background-color: #fff; }
+
+#winning-output { font-size: 18px; }
+
+.result-wrapper { width: 40%; border: 2px solid #ba1414; border-radius: 4px; text-align: center; margin: 20px auto; }
+
+#result-box { font-size: 32px; color: #ba1414; margin-bottom: 20px; }

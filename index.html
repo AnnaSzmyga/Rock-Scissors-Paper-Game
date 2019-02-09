@@ -2,46 +2,34 @@
 <html lang="en" >
 
 <head>
-  <meta charset="UTF-8">
-  <title>Rock Scissors Paper Game</title>
-  
-  
-  
-      <link rel="stylesheet" href="css/style.css">
-
-  
+  	<meta charset="UTF-8">
+  	<title>Rock Scissors Paper Game</title>
+	<link rel="stylesheet" href="css/style.css">
 </head>
-
 <body>
-
-  <div class="container">
-  <h1>Rock scissors paper Game</h1>
-  <div class="column">
-    <div><button class="yellow" id="button1">Rock</button></div>
-  </div>
-  <div class="column">
-    <div><button class="orange" id="button2">Scissors</button></div>
-  </div>
-  <div class="column">
-    <div><button class="red" id="button3">Paper</button></div>
-  </div>
-  <div id="output"></div>
-  <div id="winning-output"></div>
-  <div class="result-box">
-    <h2>Result</h2>
-    <p>Player: | Computer:</p>
-    <div id="result"></div>
-  </div>
-  <div><button class="green" id="new-game-btn">New Game</button></div>
-</div>
+	  <div class="container">
+		  <h1>Rock scissors paper Game</h1>
+		  <div class="column">
+		  	<div><button class="player-move rock-btn" data-move="ROCK">Rock</button></div>
+		  </div>
+		  <div class="column">
+		    <div><button class="player-move scissors-btn" data-move="SCISSORS">Scissors</button></div>
+		  </div>
+		  <div class="column">
+		    <div><button class="player-move paper-btn" data-move="PAPER">Paper</button></div>
+		  </div>
+		  <div id="output"></div>
+		  <div id="winning-output"></div>
+		  <div class="result-wrapper">
+		    <h2>Result</h2>
+		    <p>Player: | Computer:</p>
+		    <div id="result-box"></div>
+		  </div>
+		  <div><button class="new-game-btn" id="new-game-btn">New Game</button></div>
+	</div>
   
   
-
-    <script  src="js/index.js"></script>
-
-
-
-
+    <script  src="js/script.js"></script>
 </body>
 
 </html>

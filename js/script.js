@@ -1,46 +1,48 @@
 'use strict';
 
-var button1 = document.getElementById('button1');
-var button2 = document.getElementById('button2');
-var button3 = document.getElementById('button3');
+var buttons = document.querySelectorAll('.player-move');
 var newGameButton = document.getElementById('new-game-btn');
-
 var output = document.getElementById('output');
-var outputShow = function (text) {
-  output.innerHTML = text + '<br>';
-};
-
 var winningOutput = document.getElementById('winning-output');
-var winningShow = function(text) {
-  winningOutput.innerHTML = '<br>' + text + '<br>';
-};
-outputShow('Please, press the New Game button!');
-var result = document.getElementById('result');
-var playerResult = 0;
-var computerResult = 0;
-var resultShow = function() {
-  result.innerHTML = playerResult + ' : ' + computerResult;
-};
-resultShow();
+var resultBox = document.getElementById('result-box');
 
 var winningAsk = function() {
   return parseFloat(window.prompt('How many winnings end the game?'));
 };
-var gameContinue = false;
-var winningNumber;
+var params = {
+  playerResult: 0,
+  computerResult: 0,
+  gameContinue: false,
+  winningNumber: 0 
+};
+console.log(params);
+
+var outputShow = function (text) {
+  output.innerHTML = text + '<br>';
+};
+var winningShow = function(text) {
+  winningOutput.innerHTML = '<br>' + text + '<br>';
+};
+outputShow('Please, press the New Game button!');
+
+var resultShow = function() {
+  resultBox.innerHTML = params.playerResult + ' : ' + params.computerResult;
+};
+resultShow();
+
 var newGame = function() {
-  playerResult = 0;
-  computerResult = 0;
+  params.playerResult = 0;
+  params.computerResult = 0;
   resultShow();
-  winningNumber = winningAsk();
-  if (isNaN(winningNumber)) {
+  params.winningNumber = winningAsk();
+  if (isNaN(params.winningNumber)) {
     outputShow('');
     winningShow('<br>You didn\'t enter correct winnings number. Please, press New Game button!<br>');
-    gameContinue = false;
+    params.gameContinue = false;
   } else {
     outputShow('What is your move? Click the button!');
-    winningShow('<br>' + winningNumber + ' winnings give you VICTORY!<br>');
-    gameContinue = true;
+    winningShow('<br>' + params.winningNumber + ' winnings give you VICTORY!<br>');
+    params.gameContinue = true;
   }
 };
 var moveRandom = function() {
@@ -54,12 +56,12 @@ var moveRandom = function() {
 };
 var win = function(playerMoveName, computerMoveName) {
   outputShow('YOU WON: you played ' + playerMoveName + ' , computer played ' + computerMoveName + '.');
-  playerResult++;
+  params.playerResult++;
   resultShow();
   };
 var lose = function (playerMoveName, computerMoveName) {
   outputShow('YOU LOST: you played ' + playerMoveName + ' , computer played ' + computerMoveName + '.');
-  computerResult++;
+  params.computerResult++;
   resultShow();
 };
 var playerMove = function(playerMoveName) {
@@ -72,49 +74,34 @@ var playerMove = function(playerMoveName) {
    } else {
       outputShow(deadHeat);
   }
-  if ((playerResult === winningNumber) || (computerResult === winningNumber)) {
+  if ((params.playerResult === params.winningNumber) || (params.computerResult === params.winningNumber)) {
     gameOver();
  }
 };
 var gameOver = function() {
-  if (playerResult < computerResult) {
+  if (params.playerResult < params.computerResult) {
     winningShow('YOU LOST ENTIRE GAME!');
-  } else if (playerResult > computerResult) {
+  } else if (params.playerResult > params.computerResult) {
     winningShow('YOU WON ENTIRE GAME!');
   } else {
     winningShow('');
   }
   outputShow('GAME OVER! Please, press the New Game button!');
-  gameContinue = false;
+  params.gameContinue = false;
 };
 
-var button1Callback = function(event) {
- if (gameContinue === true) {
-   playerMove('ROCK');
- } else {
-   gameOver();
- } 
-};
-var button2Callback = function(event) {
- if (gameContinue === true) {
-   playerMove('SCISSORS');
- } else {
-   gameOver();
- }
-};
-var button3Callback = function(event) {
- if (gameContinue === true) {
-   playerMove('PAPER');
- } else {
-   gameOver();
- }
+var buttonsCallback = function(event) {
+   if (params.gameContinue === true) {
+     playerMove(this.getAttribute('data-move'));
+   } else {
+     gameOver();
+   }
 };
 var newGameButtonCallback = function(event) {
   newGame();
 };
 
-button1.addEventListener('click', button1Callback);
-button2.addEventListener('click', button2Callback);
-button3.addEventListener('click', button3Callback);
-
+for (var i = 0; i < buttons.length; i++) {
+  buttons[i].addEventListener('click', buttonsCallback);
+}
 newGameButton.addEventListener('click', newGameButtonCallback);
