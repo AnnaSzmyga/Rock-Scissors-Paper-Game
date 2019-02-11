@@ -7,16 +7,16 @@
 	<link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-	  <div class="container">
+	<div class="container">
 		  <h1>Rock scissors paper Game</h1>
 		  <div class="column">
-		  	<div><button class="player-move rock-btn" data-move="ROCK">Rock</button></div>
+		    <div><button class="player-move yellow" data-move="rock">Rock</button></div>
 		  </div>
 		  <div class="column">
-		    <div><button class="player-move scissors-btn" data-move="SCISSORS">Scissors</button></div>
+		    <div><button class="player-move orange" data-move="scissors">Scissors</button></div>
 		  </div>
 		  <div class="column">
-		    <div><button class="player-move paper-btn" data-move="PAPER">Paper</button></div>
+		    <div><button class="player-move red" data-move="paper">Paper</button></div>
 		  </div>
 		  <div id="output"></div>
 		  <div id="winning-output"></div>
@@ -25,9 +25,32 @@
 		    <p>Player: | Computer:</p>
 		    <div id="result-box"></div>
 		  </div>
-		  <div><button class="new-game-btn" id="new-game-btn">New Game</button></div>
+		  <div><button class="green" id="new-game-btn">New Game</button></div>
 	</div>
-  
+
+		<div class="overlay" id="modal-overlay">
+			<div class="modal" id="game-over-modal">
+				<a href="#" class="close">x</a>
+		    <div id="game-over-modal-output"></div>
+				<p>GAME OVER! Press the New Game button!</p>		
+			</div>
+		  
+			<div class="modal" id="modal-two">
+				<a href="#" class="close">x</a>
+				<header>Modal two</header>
+				<div class="content">
+					<p>Dolor sit amet!</p>
+				</div>
+			</div>
+			<div class="modal" id="modal-three">
+				<a href="#" class="close">x</a>
+				<header>Modal three</header>
+				<div class="content">
+					<p>Dolor sit amet!</p>
+				</div>
+			</div>
+		</div>
+		  
   
     <script  src="js/script.js"></script>
 </body>

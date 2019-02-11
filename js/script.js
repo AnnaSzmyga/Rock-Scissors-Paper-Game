@@ -47,18 +47,18 @@ var newGame = function() {
 };
 var moveRandom = function() {
   if ((Math.floor(Math.random() * 3)) + 1 === 1) {
-    return 'ROCK';
+    return 'rock';
   } else if ((Math.floor(Math.random() * 3)) + 1 === 2) {
-    return 'SCISSORS';
+    return 'scissors';
   } else {
-    return 'PAPER';
+    return 'paper';
   }
 };
 var win = function(playerMoveName, computerMoveName) {
   outputShow('YOU WON: you played ' + playerMoveName + ' , computer played ' + computerMoveName + '.');
   params.playerResult++;
   resultShow();
-  };
+};
 var lose = function (playerMoveName, computerMoveName) {
   outputShow('YOU LOST: you played ' + playerMoveName + ' , computer played ' + computerMoveName + '.');
   params.computerResult++;
@@ -67,9 +67,9 @@ var lose = function (playerMoveName, computerMoveName) {
 var playerMove = function(playerMoveName) {
   var computerMoveName = moveRandom();
   var deadHeat = 'IT\'S DEAD-HEAT: you played ' + playerMoveName + ' , computer played ' + computerMoveName + '.';
-  if (((playerMoveName === 'ROCK') && (computerMoveName === 'SCISSORS')) || ((playerMoveName === 'SCISSORS') && (computerMoveName === 'PAPER')) || ((playerMoveName === 'PAPER') && (computerMoveName === 'ROCK'))) {
+  if (((playerMoveName === 'rock') && (computerMoveName === 'scissors')) || ((playerMoveName === 'scissors') && (computerMoveName === 'paper')) || ((playerMoveName === 'paper') && (computerMoveName === 'rock'))) {
       win(playerMoveName, computerMoveName);
-   } else if (((playerMoveName === 'ROCK') && (computerMoveName === 'PAPER')) || ((playerMoveName === 'SCISSORS') && (computerMoveName === 'ROCK')) || ((playerMoveName === 'PAPER') && (computerMoveName === 'SCISSORS'))) {
+   } else if (((playerMoveName === 'rock') && (computerMoveName === 'paper')) || ((playerMoveName === 'scissors') && (computerMoveName === 'rock')) || ((playerMoveName === 'paper') && (computerMoveName === 'scissors'))) {
       lose(playerMoveName, computerMoveName);           
    } else {
       outputShow(deadHeat);
