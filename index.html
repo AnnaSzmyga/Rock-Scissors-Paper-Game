@@ -4,65 +4,67 @@
 <head>
   	<meta charset="UTF-8">
   	<title>Rock Scissors Paper Game</title>
+  	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+  	<link href="https://fonts.googleapis.com/css?family=Electrolize|Press+Start+2P" rel="stylesheet">
 	<link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-	<div class="container">
-		  <h1>Rock scissors paper Game</h1>
-		  <div class="column">
-		    <div><button class="player-move yellow" data-move="rock">Rock</button></div>
-		  </div>
-		  <div class="column">
-		    <div><button class="player-move orange" data-move="scissors">Scissors</button></div>
-		  </div>
-		  <div class="column">
-		    <div><button class="player-move red" data-move="paper">Paper</button></div>
-		  </div>
-		  <div id="output"></div>
-		  <div class="result-wrapper">
-		    <h2>Result</h2>
-		    <p>Player: | Computer:</p>
-		    <div id="result-box"></div>
-		  </div>
-		  <div><button class="green" id="new-game-btn">New Game</button></div>
+	<div class="game-wrapper">
+	  <h1>Rock scissors paper Game</h1>
+	  <div class="buttons-wrapper">
+	    <button class="player-move" data-move="rock"><i class="far fa-hand-rock"></i></button>
+	    <button class="player-move" data-move="scissors"><i class="far fa-hand-scissors"></i></button>
+	    <button class="player-move" data-move="paper"><i class="far fa-hand-paper"></i></button>
+	  </div>
+	  
+	  <div id="output"></div>
+	  <div class="result-wrapper">
+	    <h2>Result</h2>
+	    <p>Player: | Computer:</p>
+	    <div id="result-box"></div>
+	  </div>
+	  <div><button class="new-game-btn" id="new-game-btn">New Game</button></div>
 	</div>
 
-		<div class="overlay" id="modal-overlay">
-			<div class="modal" id="game-over-modal">
-				<a href="#" class="close">x</a>
-		    	<div id="game-over-modal-output"></div>
-				<p>GAME OVER! Press the New Game button!</p>
-				<div>
-			      <table>
-			        <thead>
-			          <tr>
-			            <th>Round number</th>
-			            <th>Player move</th>
-			            <th>Computer move</th>
-			            <th>Round result</th>
-			            <th>Game result</th>
-			          </tr>
-			        </thead>
-			        <tbody>
-			        </tbody>
-			      </table>
-			    </div>		
-			</div>
-		  
-			<div class="modal" id="new-game-modal">
-				<a href="#" class="close">x</a>
-			    <form>
-			      <label>What is your name?</label>
-			      <input type="text" name="player-name" id="player-name">
-			      <label>How many winnings end the game?</label>
-			      <input type="number" name="winnings-number" id="winnings-number">
-			      <div id="new-game-modal-output"></div>
-			      <button id="start-btn">Start</button>
-			    </form>
-			</div>
+	<div class="overlay" id="modal-overlay">
+		<div class="modal" id="game-over-modal">
+			<a href="#" class="close">x</a>
+	    	<div id="game-over-modal-output"></div>
+			<p>GAME OVER! Press the New Game button!</p>
+		    <div>
+		      <table>
+		        <thead>
+		          <tr>
+		            <th>Round number</th>
+		            <th>Player move</th>
+		            <th>Computer move</th>
+		            <th>Round result</th>
+		            <th>Game result</th>
+		          </tr>
+		        </thead>
+		        <tbody>
+		        </tbody>
+		      </table>
+		    </div>
 		</div>
+	  
+		<div class="modal" id="new-game-modal">
+			<a href="#" class="close">x</a>
+		    <form>
+		      <div class="form-item">
+		        <label>What is your name?</label>
+		        <input type="text" name="player-name" id="player-name">
+		      </div>
+		      <div class="form-item">
+		        <label>How many winnings end the game?</label>
+		        <input type="number" name="winnings-number" id="winnings-number">
+		      </div>
+		      <div id="new-game-modal-output"></div>
+		      <button type="submit" id="start-btn">Start</button>
+		    </form>
+		</div>
+	</div>
 		  
-  
     <script  src="js/script.js"></script>
 </body>
 

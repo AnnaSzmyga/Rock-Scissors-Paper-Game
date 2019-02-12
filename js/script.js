@@ -9,8 +9,8 @@ var params = {
   playerResult: 0,
   computerResult: 0,
   gameContinue: false,
-  winningNumber: 0,
-  winningInfo: '',
+  winningsNumber: 0,
+  winningsInfo: '',
   playerName: 'YOU',
   progress: [],
   roundNumber: 0,
@@ -18,7 +18,7 @@ var params = {
 };
 
 var outputShow = function (text) {
-  output.innerHTML = text + '<br>' + params.winningInfo;
+  output.innerHTML = text + '<br>' + params.winningsInfo;
 };
 
 outputShow('Please, press the New Game button!');
@@ -35,7 +35,7 @@ var newGame = function() {
   params.roundNumber = 0;
   cleanTable();
   resultShow();
-  params.winningInfo = params.winningNumber + ' winnings give you VICTORY!<br>'
+  params.winningsInfo = params.winningsNumber + ' winnings give you VICTORY!<br>'
   outputShow('What is your move? Click the button!');
   params.gameContinue = true;
 };
@@ -76,7 +76,7 @@ var playerMove = function(playerMoveName) {
       params.roundResult = '0 : 0';
   }
   params.progress.push({roundNumber: params.roundNumber, playerMoveName: playerMoveName, computerMoveName: computerMoveName, roundResult: params.roundResult, gameResult: params.playerResult + ' : ' + params.computerResult});
-  if ((params.playerResult === params.winningNumber) || (params.computerResult === params.winningNumber)) {
+  if ((params.playerResult === params.winningsNumber) || (params.computerResult === params.winningsNumber)) {
     buildTable();
     gameOver();
   }
@@ -110,7 +110,7 @@ var gameOver = function() {
     document.querySelector('#game-over-modal-output').innerHTML = params.playerName + ' WON ENTIRE GAME!';
   } 
   showModal('#game-over-modal');
-  params.winningInfo = '';
+  params.winningsInfo = '';
   outputShow('Please, press the New Game button!');
   params.gameContinue = false;
 };
@@ -136,8 +136,8 @@ var startButtonCallback = function(event) {
   if (!(document.querySelector('#player-name').value.trim() === '')) {
     params.playerName = document.querySelector('#player-name').value;
   }
-  params.winningNumber = Math.round(document.querySelector('#winnings-number').value);
-  if (params.winningNumber === 0) {
+  params.winningsNumber = Math.round(document.querySelector('#winnings-number').value);
+  if (params.winningsNumber === 0) {
     document.querySelector('#new-game-modal-output').innerHTML = '<br>You didn\'t enter correct winnings number!<br>';
     params.gameContinue = false;
   } else {
