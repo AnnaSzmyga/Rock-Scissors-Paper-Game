@@ -19,7 +19,6 @@
 		    <div><button class="player-move red" data-move="paper">Paper</button></div>
 		  </div>
 		  <div id="output"></div>
-		  <div id="winning-output"></div>
 		  <div class="result-wrapper">
 		    <h2>Result</h2>
 		    <p>Player: | Computer:</p>
@@ -50,19 +49,16 @@
 			    </div>		
 			</div>
 		  
-			<div class="modal" id="modal-two">
+			<div class="modal" id="new-game-modal">
 				<a href="#" class="close">x</a>
-				<header>Modal two</header>
-				<div class="content">
-					<p>Dolor sit amet!</p>
-				</div>
-			</div>
-			<div class="modal" id="modal-three">
-				<a href="#" class="close">x</a>
-				<header>Modal three</header>
-				<div class="content">
-					<p>Dolor sit amet!</p>
-				</div>
+			    <form>
+			      <label>What is your name?</label>
+			      <input type="text" name="player-name" id="player-name">
+			      <label>How many winnings end the game?</label>
+			      <input type="number" name="winnings-number" id="winnings-number">
+			      <div id="new-game-modal-output"></div>
+			      <button id="start-btn">Start</button>
+			    </form>
 			</div>
 		</div>
 		  
