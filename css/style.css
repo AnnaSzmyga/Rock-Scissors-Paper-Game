@@ -1,6 +1,10 @@
+* {
+  box-sizing: border-box;
+}
+
 body {
   text-align: center;
-  padding: 20px;
+  padding: 10px;
   font-family: 'Electrolize', sans-serif;
 }
 
@@ -19,6 +23,7 @@ button {
   outline: 0 !important;
   margin: 30px;
   margin-top: 0;
+  box-shadow: 2px 2px 8px black;
 }
 
 button:hover {
@@ -57,6 +62,7 @@ button:hover {
   border: 2px solid #314389;
   border-radius: 4px;
   background-color: lightblue;
+  box-shadow: 2px 2px 8px black;
 }
 
 .game-wrapper .result-wrapper {
@@ -78,6 +84,7 @@ button:hover {
   border: 2px solid #314389;
   border-radius: 4px;
   color: black;
+  box-shadow: 2px 2px 8px black;
 }
 
 .overlay {
@@ -149,16 +156,20 @@ button:hover {
 
 @media (max-width: 991px) {
   .game-wrapper {
-    width: 90%;
+    width: 100%;
+  }
+  .game-wrapper button {
+    margin-left: 2%;
+    margin-right: 2%;
   }
   .game-wrapper #output {
-    width: 90%;
+    width: 96%;
   }
   .game-wrapper .result-wrapper {
-    width: 90%;
+    width: 96%;
   }
   .modal {
-    width: 90%;
+    width: 96%;
   }
 }
 /*# sourceMappingURL=style.css.map */
